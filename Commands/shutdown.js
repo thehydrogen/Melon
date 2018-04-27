@@ -1,6 +1,6 @@
 exports.run = (client, msg, args) => {
 
-    if(msg.author.id !== "327864603788967948") return msg.channel.send({embed: {
+    if(msg.author.id !== "") return msg.channel.send({embed: {
         color: 0xff0000,
          title: `:no_entry: Oops!`,
             description: `You don't have permission to use this command. You need to be **Bot Host** in order to use this command!`,
