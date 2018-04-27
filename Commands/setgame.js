@@ -2,7 +2,7 @@ exports.run = (client, msg, args) => {
 
     let game = args.join(" ")
 
-   let maintainers = ["327864603788967948", "328816161028571136", "357911279312306176"]; 
+   let maintainers = ["", "", ""]; 
      if(!maintainers.includes(msg.author.id)) return msg.channel.send({embed: {
         color: 0xff0000,
          title: `:no_entry: Oops!`,
