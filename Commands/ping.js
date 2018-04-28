@@ -19,7 +19,7 @@ exports.run = (client, msg, args) => {
               name: "Melon",
               icon_url: client.user.avatarURL
             },
-            description: `:ping_pong: **Melon** v0.6b by BriciWorld, Casbas 234, and Hydrogen, is running for ${format(uptime)}. Serving ${client.users.size} users in ${client.guilds.size} servers. :dizzy:`,
+            description: `:ping_pong: **Melon** v1.0 by BriciWorld, Casbas 234, and Hydrogen, is running for ${format(uptime)}. Serving ${client.users.size} users in ${client.guilds.size} servers. :dizzy:`,
             footer: {
               text: `This took me ${m.createdTimestamp - msg.createdTimestamp}ms`
                 }
