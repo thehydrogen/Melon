@@ -4,7 +4,7 @@ exports.run = (client, msg, args) => {
 
     responses = [
         ":soccer: | :cd: | :cat: \n:green_apple: | :cat: | :green_apple: \n:tennis: | :map: | :dvd:", 
-        ":package: | :dog: | :basketball: \n:dvd: | :map: | :dvd: \n :apple: | :cd: | :package:",
+        ":package: | :dog: | :basketball: \n:dvd: | :dvd: | :dvd: \n:apple: | :map: | :package:",
         ":cd: | :cat: | :tennis: \n:tennis: | :green_apple: | :tennis: \n:package: | :cat: | :cd:",
         ":dvd: | :dog: | :map: \n:soccer: | :package: | :package: \n:dvd: | :green_apple: | :dog:",
     ];
@@ -12,7 +12,7 @@ exports.run = (client, msg, args) => {
 
     msg.channel.send({embed: {
         color: 0xd45555,
-        title: "Playing the slots...",
+        title: "Playing the slots... :slot_machine:",
         description: (responses[Math.floor(Math.random() * responses.length)]),
         }
     });
