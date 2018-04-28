@@ -24,7 +24,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
-  console.log(`I've been kicked from ${guild.name}. I am in ${client.guilds.size} servers now!`);
+  console.log(`I've left: ${guild.name}. This could've been because I was kicked, banned, or the server was deleted.`);
 });
 
 client.on("message", msg => {
