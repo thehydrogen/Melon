@@ -68,7 +68,7 @@ exports.run = (client, msg, args) => {
           },
           {
             name: "Support Server",
-            value: `[Join](https://discord.gg/H5YDACD)`,
+            value: `[Join](https://discord.gg/5h86cH9)`,
             inline: true
           },
         ],
