@@ -23,6 +23,8 @@ let embed = new Discord.RichEmbed()
 .addField(`+slots`, "Play the slots!")
 .addField(`+embed`, "Says something to the chat, but this time with embed! Usage: `+embed <text>`")
 .addField(`+profile`, "Displays information of your account")
+.addField(`+roll`, "Roll dice!")
+.addField(`+channelinfo`, "Displays information of the current channel")
 
 msg.author.send(embed);
 msg.channel.send({embed: {
