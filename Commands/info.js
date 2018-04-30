@@ -20,7 +20,7 @@ exports.run = (client, msg, args) => {
           name: "Melon",
           icon_url: client.user.avatarURL
         },
-        description: `${client.user.username} - A discord bot that does everything!`,
+        description: `${client.user.username} - A Discord bot for the new age which does anything you want`,
         fields: [{
             name: "Author",
             value: `BriciWorld#1434`,
