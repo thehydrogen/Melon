@@ -13,7 +13,7 @@ let embed = new Discord.RichEmbed()
 .addField(`+8ball`, "Ask something to the magic 8ball. Usage: `+8ball <question>`")
 .addField(`+ping`, "Shows the latency ping")
 .addField(`+serverinfo`, "Displays information of the current server")
-.addField(`+avatar`, "Shows your avatar")
+.addField(`+avatar`, "Shows your avatar. Usage: `+avatar [user mention]`")
 .addField(`+info`, "Displays information of this bot")
 .addField(`+cat`, "Shows a random cat (API broken)")
 .addField(`+dog`, "Shows a random dog")
@@ -25,6 +25,7 @@ let embed = new Discord.RichEmbed()
 .addField(`+profile`, "Displays information of your account")
 .addField(`+roll`, "Roll dice!")
 .addField(`+channelinfo`, "Displays information of the current channel")
+.addField(`+weather`, "Displays weather for the selected location. Usage: `+weather <location>`")
 
 msg.author.send(embed);
 msg.channel.send({embed: {
