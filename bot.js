@@ -4,6 +4,7 @@ var userData = JSON.parse(fs.readFileSync("./userData.json", "utf8"));
 
 const Discord = require("discord.js");
 const random = require("random-animal");
+const weather = require("weather-js");
 const client = new Discord.Client();
 const config = require("./Configuration/auth.json");
 const embed = new Discord.RichEmbed();
