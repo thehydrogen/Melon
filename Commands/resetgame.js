@@ -7,7 +7,7 @@ exports.run = (client, msg, args) => {
             description: `You don't have permission to use this command. You need to be **Bot Developer** in order to use this command!`,
             }
         });
-        client.user.setActivity(`Type +help | v1.0`,  { type: 'STREAMING', url: `https://twitch.tv/briciworld` });
+        client.user.setActivity(`Type +help | v1.1`,  { type: 'STREAMING', url: `https://twitch.tv/briciworld` });
         msg.channel.send({embed: {
             color: 0x00ff00,
             title: `:white_check_mark: Success!`,
