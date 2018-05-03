@@ -13,7 +13,7 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`Serving in ${client.guilds.size} servers, with ${client.users.size} users on ${client.channels.size} channels`)
     client.user.setStatus(`online`)
-    client.user.setActivity(`Type +help | v1.0`,  { type: 'STREAMING', url: `https://twitch.tv/briciworld` });
+    client.user.setActivity(`Type +help | v1.1`,  { type: 'STREAMING', url: `https://twitch.tv/briciworld` });
 });
 
 fs.writeFile('./userData.json', JSON.stringify(userData), (err) => {
