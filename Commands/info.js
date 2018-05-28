@@ -43,7 +43,7 @@ exports.run = (client, msg, args) => {
           },
           {
             name: "Bot version",
-            value: `v1.1`,
+            value: `v1.1.2`,
             inline: true
           },
           {
