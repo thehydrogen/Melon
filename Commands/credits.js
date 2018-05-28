@@ -8,7 +8,7 @@ exports.run = (client, msg, args) => {
           name: "Melon",
           icon_url: client.user.avatarURL
         },
-        description: `:hammer: **Project Lead**: BriciWorld#1434`,
+        description: `:hammer: **Project Lead**: BW Tech#1434`,
         fields: [{
             name: "APIs",
             value: `[Random Cat](http://random.cat) \n[Random Dog](http://random.dog)`,
@@ -20,6 +20,9 @@ exports.run = (client, msg, args) => {
             inline: true
           },
         ],
+        footer: {
+          text: `Special thanks to TEC#0001 for hosting this bot!`
+            }
         }
     });
     console.log(`Treating ${msg.content} by ${msg.author.tag} from ${msg.guild} as a command.`);
