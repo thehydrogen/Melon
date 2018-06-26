@@ -25,6 +25,7 @@ client.on("guildCreate", guild => {
 });
 
 client.on("guildDelete", guild => {
+  if(!guild.available) return;
   console.log(`I've left: ${guild.name}. This could've been because I was kicked, banned, or the server was deleted.`);
 });
 
