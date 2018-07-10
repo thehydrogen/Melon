@@ -1,7 +1,5 @@
 const fs = require("fs");
 
-var userData = JSON.parse(fs.readFileSync("./userData.json", "utf8"));
-
 const Discord = require("discord.js");
 const random = require("random-animal");
 const weather = require("weather-js");
@@ -13,12 +11,8 @@ client.on('ready', () => {
     console.log(`Logged in as ${client.user.tag}!`);
     console.log(`Serving in ${client.guilds.size} servers, with ${client.users.size} users on ${client.channels.size} channels`)
     client.user.setStatus(`online`)
-    client.user.setActivity(`Type +help | v1.1.2`,  { type: 'STREAMING', url: `https://twitch.tv/briciworld` });
+    client.user.setActivity(config.game,  { type: 'STREAMING', url: `https://twitch.tv/bwtech` });
 });
-
-fs.writeFile('./userData.json', JSON.stringify(userData), (err) => {
-if (err) console.log(err);
-})
 
 client.on("guildCreate", guild => {
   console.log(`I've been added to ${guild.name}. I am in ${client.guilds.size} servers now!`);
