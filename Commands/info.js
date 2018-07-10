@@ -17,13 +17,13 @@ exports.run = (client, msg, args) => {
     msg.channel.send({embed: {
         color: 0x00ff00,
         author: {
-          name: "Melon",
+          name: client.user.username,
           icon_url: client.user.avatarURL
         },
         description: `${client.user.username} - A Discord bot for the new age which does anything you want`,
         fields: [{
             name: "Author",
-            value: `BriciWorld#1434`,
+            value: `BW Tech#1434`,
            inline: true
           },
           {
@@ -43,7 +43,7 @@ exports.run = (client, msg, args) => {
           },
           {
             name: "Bot version",
-            value: `v1.1.2`,
+            value: `v1.2`,
             inline: true
           },
           {
