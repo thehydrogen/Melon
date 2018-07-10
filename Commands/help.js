@@ -29,6 +29,7 @@ let embed = new Discord.RichEmbed()
 .addField(`+js`, "JS > Python")
 .addField(`+flipcoin`, "Flip a coin")
 .addField(`+fact`, "Shows a random fact")
+.addField(`+members`, "Shows the current server's member count")
 
 msg.author.send(embed);
 msg.channel.send({embed: {
