@@ -5,7 +5,7 @@ exports.run = (client, msg, args, config) => {
 
 let embed = new Discord.RichEmbed()
        
-.setAuthor("Melon", client.user.avatarURL)
+.setAuthor(client.user.username, client.user.avatarURL)
 .setColor("#d45555")
 .setDescription("Here you can see the commands for Melon!")
 .addField(`+help`, "Shows this list")
