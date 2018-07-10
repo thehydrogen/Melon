@@ -16,10 +16,10 @@ exports.run = (client, msg, args) => {
         m.edit({embed: {
             color: 0xd45555,
             author: {
-              name: "Melon",
+              name: client.user.username,
               icon_url: client.user.avatarURL
             },
-            description: `:ping_pong: **Melon** v1.1.2 by BriciWorld, Casbas 234, and Hydrogen, is running for ${format(uptime)}. Serving ${client.users.size} users in ${client.guilds.size} servers. :dizzy:`,
+            description: `:ping_pong: **Melon** by BriciWorld, Casbas 234, and Hydrogen, is running for ${format(uptime)}. Serving ${client.users.size} users in ${client.guilds.size} servers. :dizzy:`,
             footer: {
               text: `This took me ${m.createdTimestamp - msg.createdTimestamp}ms`
                 }
