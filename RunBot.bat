@@ -1,3 +1,0 @@
-@echo off
-echo Welcome back! Starting Melon...
-node bot.js
