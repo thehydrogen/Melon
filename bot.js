@@ -1,5 +1,8 @@
-const fs = require("fs");
 
+console.log("[boot] Booting up... If you're stuck at this screen, something has gone wrong.")
+
+// Imports
+const fs = require("fs");
 const Discord = require("discord.js");
 const random = require("random-animal");
 const weather = require("weather-js");
@@ -8,14 +11,12 @@ const config = require("./Configuration/auth.json");
 const embed = new Discord.RichEmbed();
 
 client.on('ready', () => { 	
-    console.log(`Logged in as ${client.user.tag}!`);
-    console.log(`Serving in ${client.guilds.size} servers, with ${client.users.size} users on ${client.channels.size} channels`)
-    client.user.setStatus(`online`)
-    client.user.setActivity(config.game,  { type: 'STREAMING', url: `https://twitch.tv/bwtech` });
+    console.log(`[boot] Weehoo! I've connected to Discord as ${client.user.usernmae} (${client.user.id}).`);
+    client.user.setActivity(config.bot.user.game);
 });
 
 client.on("guildCreate", guild => {
-  console.log(`I've been added to ${guild.name}. I am in ${client.guilds.size} servers now!`);
+  console.log(`[guildCreate] I've just been added to a new guild! Here's all the info about it:\n           Owner: ${guild.owner.user.tag} | Members: ${guild.memberCount} | Name: ${guild.name}`);
 });
 
 client.on("guildDelete", guild => {
