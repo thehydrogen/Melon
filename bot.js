@@ -15,7 +15,8 @@ const embed = new Discord.RichEmbed();
 
 const Enmap = require("enmap");
 const level = require("enmap-level");
-const guilds = new Enmap({ provider: new level({ name: "guilds", dbName: "venus", dataDir: "./data/" }) })
+const guilds = new Enmap({ provider: new level({ name: "guilds", dbName: "venus", dataDir: "./data/" }) });
+client.DB = guilds;
 
 guilds.defer.then(() => {
     client.on('ready', () => { 	
