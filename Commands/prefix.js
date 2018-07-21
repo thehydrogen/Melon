@@ -8,7 +8,7 @@ module.exports = (msg, client) => {
                 embed: {
                     title: `Success!`,
                     description: `Your prefix has been changed to \`${msg.suffix}\``,
-                    color: 0xff0000
+                    color: 0x00ff00
                 }
             })
         } else {
