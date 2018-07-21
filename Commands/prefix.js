@@ -7,7 +7,7 @@ module.exports = (msg, client) => {
             msg.channel.send({
                 embed: {
                     title: `Success!`,
-                    description: `Your prefix has been changed to \`${msg.suffix}\``
+                    description: `Your prefix has been changed to \`${msg.suffix}\``,
                     color: 0xff0000
                 }
             })
