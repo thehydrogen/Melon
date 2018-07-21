@@ -1,7 +1,7 @@
 
 console.log("[boot] Booting up... If you're stuck at this screen, something has gone wrong.");
 
-disabledEvents = ["message"];
+disabledEvents = ["guildDelete", "guildCreate"];
 
 // Imports
 const fs = require("fs");
@@ -47,6 +47,7 @@ client.on("guildDelete", guild => {
 
 client.on("message", msg => {
     if (disabledEvents.includes("message")) return;
+    require("./CommandHandler.js")(msg, client);
 });
 
 client.login(auth.discord.token);
