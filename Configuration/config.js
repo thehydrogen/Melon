@@ -37,7 +37,7 @@ module.exports = {
             // --------
             leaveMessages: false,
             leaveChannel: "general",
-            leaveMessage: "Farewell, {user}."
+            leaveMessage: "Farewell, {user}.",
             // --------
             eventLogger: true,
             eventLoggerChannel: "logs",
