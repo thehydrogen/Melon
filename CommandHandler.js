@@ -19,7 +19,7 @@ module.exports = (msg, client) => {
     
     msg.suffix = suffix;
     
-    cmdFile(msg, client).catch(err => {
+    cmdFile(msg, client)/*.catch(err => {
         config.bot.maintainers.forEach(m => client.users.get(m).send({
             embed: {
                 title: client.user.username + "has encountered an error",
@@ -29,5 +29,5 @@ module.exports = (msg, client) => {
                 }
             }
         }))
-    });
+    });*/
 };
