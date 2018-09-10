@@ -8,7 +8,7 @@ const fs = require("fs");
 const Discord = require("discord.js");
 const random = require("random-animal");
 const weather = require("weather-js");
-const client = new Discord.Client();
+const client = new Discord.Client({ disabledEvents });
 const config = require("./Configuration/config.js");
 const auth = require("./Configuration/auth.js");
 const embed = new Discord.RichEmbed();
@@ -46,13 +46,11 @@ guilds.defer.then(() => {
     })
 
     client.on("guildDelete", guild => {
-        if (disabledEvents.includes("guildDelete")) return;
         if(!guild.available) return;
         console.log("I've left a guild.");
     });
 
     client.on("message", msg => {
-        if (disabledEvents.includes("message")) return;
         require("./CommandHandler.js")(msg, client);
     });
 
