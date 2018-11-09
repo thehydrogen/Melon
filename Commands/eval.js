@@ -1,39 +1,36 @@
-exports.run = (client, msg, args) => {
+module.exports = (client, msg) => {
+    let suffix = msg.suffix;
+    
+    if (config.bot.maintainers.includes(msg.author.id)) {
+        if (suffix) {
+            try {
+                var evaled = eval(suffix);
 
-    let code = args.join(" ").slice(1);
+                if (typeof evaled !== "string")
+                    evaled = require('util').inspect(evaled);
 
-    if(msg.author.id !== "") return msg.channel.send({embed: {
-        color: 0xff0000,
-         title: `:no_entry: Oops!`,
-            description: `You don't have permission to use this command. You need to be **Bot Developer** in order to use this command!`,
+                if (evaled.includes(client.token)) {
+                    return msg.channel.send('You can/'t evaluate the token!!!!!!!!')
+                }
+
+                if (evaled.length > 2000) {
+                    return require('snekfetch').post('https://hastebin.com/documents', { data: evaled }).then(result => {
+                        if(!result.body.key) {
+                            msg.channel.send(":x: Something went wrong while posting to the Hastebin API.")
+                        } else {
+                            msg.channel.send(`The output was too long, so I posted to Hastebin: [Click Here](https://hastebin.com/${result.body.key})`);
+                        }
+                    })
+                }
+
+                msg.channel.send({ embed: { description: `\`\`\`${evaled}\`\`\``, color: 0x00ff00 } });
+            } catch(e) {
+                msg.channel.send({ embed: { description: `\`\`\`${e}\`\`\``, color: 0xff0000 } });
             }
-        });
-    try {
-        const code = args.join(" ");
-        let evaled = eval(code);
-
-        if (typeof evaled !== "string")
-            evaled = require("util").inspect(evaled);
-
-        msg.channel.send({embed: {
-                color: 0x00ff00,
-                description: `\`\`\`xl\n${clean(evaled)}\n\`\`\``,
-            }
-        });
-
-    } catch (err) {
-        msg.channel.send({embed: {
-                color: 0xff0000,
-                description: `\`\`\`xl\n${clean(err)}\n\`\`\``,
-            }
-        });
-    };
-
-    function clean(text) {
-        if (typeof(text) === "string")
-            return text.replace(/`/g, "`" + String.fromCharCode(8203)).replace(/@/g, "@" + String.fromCharCode(8203));
-        else
-            return text;
-    }}
-
-config: {}
+        } else {
+            msg.channel.send('What should I evaluate?')
+        }
+    } else {
+        msg.channel.send('Access Denied')
+    }
+}
