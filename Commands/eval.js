@@ -1,4 +1,4 @@
-const config = require('../Configuration/config.js');
+const config = require('../Configuration/config');
 
 module.exports = (client, msg) => {
     let suffix = msg.suffix;
