@@ -1,0 +1,19 @@
+{
+  "name": "melon",
+  "version": "2.0.0",
+  "description": "Melon v2 Rewrite",
+  "main": "bot.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehydrogen/Melon.git"
+  },
+  "author": "@kenhydrogen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thehydrogen/Melon/issues"
+  },
+  "homepage": "https://github.com/thehydrogen/Melon#readme"
+}
