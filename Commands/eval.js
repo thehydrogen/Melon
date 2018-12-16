@@ -1,6 +1,6 @@
 const config = require('../Configuration/config');
 
-module.exports = (client, msg) => {
+module.exports = (msg, client) => {
     let suffix = msg.suffix;
     
     if (config.bot.maintainers.includes(msg.author.id)) {
