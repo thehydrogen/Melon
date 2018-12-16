@@ -1,3 +1,5 @@
+const config = require('../Configuration/config.js');
+
 module.exports = (client, msg) => {
     let suffix = msg.suffix;
     
