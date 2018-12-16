@@ -10,7 +10,7 @@ module.exports = (client, msg) => {
                     evaled = require('util').inspect(evaled);
 
                 if (evaled.includes(client.token)) {
-                    return msg.channel.send('You can/'t evaluate the token!!!!!!!!')
+                    return msg.channel.send('You can\'t evaluate the token!!!!!!!!')
                 }
 
                 if (evaled.length > 2000) {
