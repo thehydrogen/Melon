@@ -21,7 +21,7 @@ guilds.defer.then(() => {
         console.log(`[boot] Weehoo! I've connected to Discord as ${client.user.username} (${client.user.id}).`);
 
         game = config.bot.user.game.replace("{bot_name}", client.user.username).replace("{guilds_size}", client.guilds.size)
-        client.user.setActivity(config.bot.user.game);
+        client.user.setActivity(game);
 
         let status = config.bot.user.status;
         switch (status) {
