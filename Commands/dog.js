@@ -1,6 +1,7 @@
-exports.run = async (client, msg, args) => {
-    const random = require("random-animal");
-              random.dog().then(url => {
+const random = require("random-animal");
+
+module.exports = (msg, client) => {
+    random.dog().then(url => {
      msg.channel.send({embed: {
              color: 0xd45555,
              title: `:dog: Woof...`,
