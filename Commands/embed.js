@@ -1,16 +1,29 @@
 module.exports = (msg, client) => {
     if (msg.member.roles.some(r=>["Staff"].includes(r.name))) {
         let suffix = msg.suffix;
-        msg.delete();
-        msg.channel.send({embed: {
-            color: 0xd45555,
-            author: {
-                name: msg.author.username + 'says',
-                icon_url: msg.author.avatarURL
-            },
-            description: text,
-            }
-        });
+        if (suffix) {
+            msg.delete();
+            msg.channel.send({embed: {
+                color: 0xd45555,
+                author: {
+                    name: msg.author.username + ' says',
+                    icon_url: msg.author.avatarURL
+                },
+                description: suffix,
+                }
+            });
+        } else {
+            msg.channel.send({
+                embed: {
+                    title: ':x: You\'re missing required arguments.',
+                    description: 'Please tell me what to embed.',
+                    color: 0xff0000,
+                    footer: {
+                        text: 'If you believe this is a mistake, please contact the bot\'s maintainers.'
+                    }
+                }
+            })
+        }
     } else {
         msg.channel.send({
             embed: {
