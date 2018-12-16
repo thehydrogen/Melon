@@ -1,5 +1,5 @@
 module.exports = (msg, client) => {
-    if (msg.member.hasPermission("MANAGE_SERVER")) {
+    if (msg.member.hasPermission("MANAGE_GUILD")) {
         if (msg.suffix) {
             let guild = client.DB.get(msg.guild.id)
             guild.prefix = msg.suffix;
