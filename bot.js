@@ -14,8 +14,8 @@ const auth = require("./Configuration/auth.js");
 const embed = new Discord.RichEmbed();
 
 const Enmap = require("enmap");
-const pgsql = require("enmap-pgsql");
-const guilds = new Enmap({ provider: new pgsql({ name: "guilds", dbName: "venus", dataDir: "./data" }) });
+const mongo = require("enmap-mongo");
+const guilds = new Enmap({ provider: new mongo({ name: "guilds", dbName: "venus" }) });
 client.DB = guilds;
 
 guilds.defer.then(() => {
