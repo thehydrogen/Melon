@@ -22,7 +22,7 @@ module.exports = {
         
         // --------
         
-        maintainers: ["Insert", "maintainers", "here"],
+        maintainers: ["357911279312306176"],
         
         // --------
         
