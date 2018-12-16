@@ -18,7 +18,7 @@
   "homepage": "https://github.com/thehydrogen/Melon#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "enmap": "^4.5.0",
+    "enmap": "^3.1.4",
     "enmap-mongo": "^2.0.2"
   }
 }
