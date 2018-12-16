@@ -6,8 +6,6 @@ disabledEvents = ["guildDelete", "guildCreate"];
 // Imports
 const fs = require("fs");
 const Discord = require("discord.js");
-const random = require("random-animal");
-const weather = require("weather-js");
 const client = new Discord.Client({ disabledEvents });
 const config = require("./Configuration/config.js");
 const auth = require("./Configuration/auth.js");
