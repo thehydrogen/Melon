@@ -19,15 +19,17 @@ module.exports = (msg, client) => {
     
     msg.suffix = suffix;
     
-    cmdFile(msg, client)/*.catch(err => {
+    try {
+        cmdFile(msg, client)
+    } catch(err) {
         config.bot.maintainers.forEach(m => client.users.get(m).send({
             embed: {
-                title: client.user.username + "has encountered an error",
+                title: `${client.user.username} has encountered an error`,
                 description: `I have encountered an error, and the execution of the command \`${cmd}\` in \`${msg.guild.name} (${msg.guild.id})\` was canceled. Below you'll find what happened:\n\`\`\`js\n${err}\`\`\``,
                 footer: {
                     text: `This is an automated message, you've been sent this as you're marked a maintainer.`
                 }
             }
         }))
-    });*/
+    };
 };
