@@ -1,62 +1,79 @@
-const Discord = require("discord.js");
-const weather = require("weather-js");
+const weather = require('weather-js');
 
-exports.run = (client, msg, args) => {
+module.exports = (msg, client) => {
+    if (msg.suffix) {
+        let suffix = msg.suffix
 
-    weather.find({search: args.join(" "), degreeType: "C"}, function(err, result) {
-      if (err) msg.channel.send(err);
+        weather.find({ search: suffix, degreeType: 'C' }, (err, result) => {
+            if (!err) {
+                if (result.length !== 0) {
+                    let current = result[0].current;
+                    let location = result[0].location;
 
-      if (result.length === 0) {
-          msg.channel.send({embed: {
-            color: 0xff0000,
-            title: `:x: Error!`,
-            description: `Invalid location! Please enter a valid location!`,
+                    msg.channel.send({
+                        embed: {
+                            title: `:white_sun_small_cloud: Weather for ${current.observationpoint}.`,
+                            description: `**${current.skytext}**`,
+                            fields: [
+                                {
+                                    name: ':thermometer: Temperature',
+                                    value: `${current.temperature} degrees`
+                                },
+                                {
+                                    name: ':thermometer: Feels Like',
+                                    value: `${current.feelslike} degrees`
+                                },
+                                {
+                                    name: ':clock3: Timezone',
+                                    value: `GMT${location.timezone}`
+                                },
+                                {
+                                    name: ':droplet: Humidity',
+                                    value: `${current.humidity}%`,
+                                },
+                                {
+                                    name: ':wind_chime: Winds',
+                                    value: `${current.winddisplay}`,
+                                }
+                            ],
+                            color: 0xdca741
+                        }
+                    })
+                } else {
+                    msg.channel.send({
+                        embed: {
+                            title: ':x: Invalid location',
+                            description: 'The location you entered was invalid.',
+                            color: 0xff0000,
+                            footer: {
+                                text: 'Check for any typos or misspellings.'
+                            }
+                        }
+                    })
+                }
+            } else {
+                msg.channel.send({
+                    embed: {
+                        title: ':x: Something went wrong.',
+                        description: 'It seems something went wrong while executing this command.',
+                        color: 0xff0000,
+                        footer: {
+                            text: 'Sorry about that.'
+                        }
+                    }
+                })
             }
-        });
-        return;
-        
-      }
-
-      var current = result[0].current;
-      var location = result[0].location;
-
-msg.channel.send({embed: {
-    color: 0xd45555,
-    title: `:white_sun_small_cloud: Weather for ${current.observationpoint}.`,
-    description: `**${current.skytext}**`,
-    thumbnail: {
-        url: current.imageUrl
-         },
-      fields: [{
-        name: "Temperature",
-        value: `**Current temperature**: ${current.temperature} degress \n**Feels like**: ${current.feelslike} degress`,
-        inline: true
-      },
-      {
-        name: "Degree Type",
-        value: `${location.degreetype}`,
-        inline: true
-      },
-      {
-        name: ":clock3: Timezone",
-        value: `GMT${location.timezone}`,
-        inline: true
-      },
-      {
-        name: ":droplet: Humidity",
-        value: `${current.humidity}%`,
-        inline: true
-      },
-      {
-        name: ":wind_chime: Winds",
-        value: `${current.winddisplay}`,
-        inline: true
-      },
-    ],
+        })
+    } else {
+        msg.channel.send({
+            embed: {
+                title: ':x: You\'re missing required arguments.',
+                description: 'Please tell me what location you want the weather for.',
+                color: 0xff0000,
+                footer: {
+                    text: 'If you believe this is a mistake, please contact the bot\'s maintainers.'
+                }
+            }
+        })
     }
-});
-
-    });
-console.log(`Treating ${msg.content} by ${msg.author.tag} from ${msg.guild} as a command.`);
 };
-config: {}

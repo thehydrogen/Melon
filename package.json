@@ -19,6 +19,7 @@
   "dependencies": {
     "discord.js": "^11.4.2",
     "enmap": "^3.1.4",
-    "enmap-mongo": "^2.0.2"
+    "enmap-mongo": "^2.0.2",
+    "weather-js": "^2.0.0"
   }
 }
